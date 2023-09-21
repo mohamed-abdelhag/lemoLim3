@@ -53,7 +53,7 @@ open class BaseTest {
     fun testState(textActionResource: Int, drawableResource: Int) {
         onView(withId(R.id.text_action))
             .check(matches(ViewMatchers.withText(textActionResource)))
-        onView(withId(R.id.image_lemon_state)).check(
+        onView(withId(R.id.imageView)).check(
             matches(withDrawable(drawableResource)))
     }
 
@@ -72,7 +72,7 @@ open class BaseTest {
      */
     fun juiceLemon() {
         while (onView(withDrawable(R.drawable.lemon_squeeze)).isPresent()) {
-            onView(withId(R.id.image_lemon_state)).perform(click())
+            onView(withId(R.id.imageView)).perform(click())
         }
     }
 
