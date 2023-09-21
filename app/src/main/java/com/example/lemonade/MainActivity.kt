@@ -174,8 +174,10 @@ class MainActivity : AppCompatActivity() {
     //Long clicking the lemon image will show how many times the lemon has been squeezed.
     private fun showSnackbar(): Boolean {
         if (lemonadeState != SQUEEZE) {
+            Log.d("Lemonade", "Snackbar not shown because lemonadeState is not SQUEEZE")
             return false
         }
+        Log.d("Lemonade", "Squeeze count: $squeezeCount")
         val squeezeText = getString(R.string.squeeze_count, squeezeCount)
         Snackbar.make(
             findViewById(R.id.constraint_Layout),
